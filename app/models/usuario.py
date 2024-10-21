@@ -16,3 +16,5 @@ class Usuario(Base):
         self.nome = nome
         self.email = email
         self.senha = senha
+
+Base.metadata.create_all(bind=db)
