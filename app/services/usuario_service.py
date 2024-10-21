@@ -8,6 +8,13 @@ class UsuarioService:
 def criar_usuario (self, nome:str, email:str, senha:str):
     try:
         usuario = Usuario(nome=nome, email=email, senha=senha)
+
+        consulta_usuario = self.repository.listar_usuarios_por_email(usuario.email)
+
+        if consulta_usuario:
+            print("Usuário já existe no banco de dados. ")
+            return
+
         self.repository.salvar_usuario(usuario)
         print("Usuário salvo com sucesso!")
     except TypeError as erro:

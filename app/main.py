@@ -1,6 +1,9 @@
+import os
 from services.usuario_service import UsuarioService
 from repositories.usuario_repository import UsuarioRepository
 from config.connention import Session
+
+os.system("cls || clear")
 
 def main():
     session = Session()
@@ -10,7 +13,7 @@ def main():
     # Criando um usuário
     service.criar_usuario("Marta", "marta@gmail.com", "123")
 
-    # Listano todos os usuários
+    # Listando todos os usuários
     print("\nListando todos os usuários.")
     lista_usuarios = service.listar_todos_usuarios()
     for usuario in lista_usuarios:

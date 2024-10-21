@@ -20,3 +20,6 @@ class UsuarioRepository:
 
     def listar_todos_usuarios(self):
         return self.session.query(Usuario).all()
+    
+    def listar_usuarios_por_email(self):
+        
